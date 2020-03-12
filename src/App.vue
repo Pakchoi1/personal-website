@@ -1,10 +1,17 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <header>学习资料</header>
+    <div class="content-wrapper">
+      <router-view />
     </div>
-    <router-view/>
+    <footer>
+      <div>浙ICP备19044627号-1</div>
+      <div>@金壮 版权所有</div>
+      <div>
+        链接导航:
+        <a href="http://beian.miit.gov.cn">工信部</a>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -14,19 +21,38 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-#nav {
-  padding: 30px;
+.content-wrapper {
+  flex: 1;
+}
+
+header {
+  background-color: #434d57;
+  width: 100vw;
+  height: 100px;
+  line-height: 100px;
+  color: #fbfbfb;
+}
+
+footer {
+  width: 100vw;
+  height: 100px;
+  background-color: #434d57;
+  color: #fbfbfb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+    text-decoration: none;
+    color: #fbfbfb;
+  }
+  a:hover {
+    color: #399aeb;
   }
 }
 </style>
